@@ -6,9 +6,12 @@ async function main() {
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
   const Token = await ethers.getContractFactory("Token");
+  const Vendor = await ethers.getContractFactory("Vendor");
   const token = await Token.deploy(1640641855, 16402641855, { gasLimit: 4000000});
+  const vendor = await Vendor.deploy(token.address, { gasLimit: 4000000});
 
   console.log("Token address:", token.address);
+  console.log("Vendor address:", vendor.address);
 }
 
 main()
