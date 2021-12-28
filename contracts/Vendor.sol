@@ -47,6 +47,7 @@ contract Vendor is Ownable {
   }
 
   /// @notice Allow users to sell tokens for ETH
+  /// @param tokenAmountToSell Amount of tokens user wants to sell
   function sellTokens(uint256 tokenAmountToSell) public {
     // Check that the requested amount of tokens to sell is more than 0
     require(tokenAmountToSell > 0, "Specify an amount of token greater than zero");
